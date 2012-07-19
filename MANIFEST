@@ -1,0 +1,16 @@
+Changes
+LICENSE
+MANIFEST
+META.json
+META.yml
+Makefile.PL
+README
+bin/etcvs
+dist.ini
+lib/App/etcvs.pm
+lib/App/etcvs/Command/import.pm
+lib/App/etcvs/Command/init.pm
+lib/App/etcvs/Command/restore.pm
+t/00-compile.t
+t/release-check-manifest.t
+t/release-pod-syntax.t

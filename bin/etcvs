@@ -1,0 +1,81 @@
+#!/usr/bin/perl
+
+use v5.10;
+
+use strict;
+use warnings;
+
+use App::etcvs;
+
+=head1 NAME
+
+etcvs - Simple configuration versioning system
+
+=head1 VERSION
+
+version 0.01
+
+=head1 SYNOPSIS
+
+ etcvs [OPTIONS] COMMAND [ARGS]
+
+ Commands:
+   init
+   import    FILE
+   restore   FILE
+
+=head1 COMMANDS
+
+=head2 init
+
+Initialize a new etcvs repository.
+
+=head2 import
+
+Import a file in the etcvs repository.
+
+=head2 restore
+
+Restore a configuration file from the etcvs repository.
+
+=head1 EXAMPLE
+
+Home configuration:
+
+ $ cd myconfig
+ $ etcvs init
+ $ etcvs import .vimrc
+ $ # make changes and git commit
+ $ etcvs restore .vimrc
+
+System configuration:
+
+ $ cd sysconfig
+ $ etcvs init
+ $ etcvs import -p /etc fstab
+ $ # make changes and git commit
+ $ etcvs restore -p /etc fstab
+
+=cut
+
+App::etcvs -> run;
+
+=head1 AUTHOR
+
+Alessandro Ghedini <alexbio@cpan.org>
+
+=head1 SEE ALSO
+
+L<etckeeper|http://joeyh.name/code/etckeeper/>
+
+=head1 LICENSE AND COPYRIGHT
+
+Copyright 2012 Alessandro Ghedini.
+
+This program is free software; you can redistribute it and/or modify it
+under the terms of either: the GNU General Public License as published
+by the Free Software Foundation; or the Artistic License.
+
+See http://dev.perl.org/licenses/ for more information.
+
+=cut
